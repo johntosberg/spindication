@@ -16,3 +16,7 @@ task run(type: JavaExec, dependsOn: classes) {
     classpath sourceSets.main.runtimeClasspath
     classpath configurations.runtime
 }
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '4.4.1'
+}

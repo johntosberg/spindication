@@ -6,10 +6,11 @@ repositories{
 }
 
 dependencies{
-    compile 'org.slf4j:slf4j-api:1.7.5'
+    compile "org.slf4j:slf4j-api:1.7.5"
     compile "org.scala-lang:scala-library:2.12.1"
-    testCompile "junit:junit:4.11"
+    testCompile group: 'org.scalatest', name: 'scalatest_2.11', version: '2.2.2'
 }
+
 
 task run(type: JavaExec, dependsOn: classes) {
     main = 'Main'

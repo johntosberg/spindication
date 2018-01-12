@@ -20,6 +20,7 @@ apply plugin: "io.ratpack.ratpack-groovy"
 dependencies{
     runtime 'org.slf4j:slf4j-simple:1.7.12'
     compile "org.scala-lang:scala-library:2.12.1"
+    compile "org.grails:grails-datastore-gorm-neo4j:6.0.9.RELEASE"
     testCompile group: 'org.scalatest', name: 'scalatest_2.11', version: '2.2.2'
     testCompile "org.spockframework:spock-core:1.0-groovy-2.4"
 }

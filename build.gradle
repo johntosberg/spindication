@@ -3,19 +3,25 @@ apply plugin: 'scala'
 repositories{
     mavenCentral()
     mavenLocal()
+    jcenter()
 }
+
+buildscript {
+  repositories {
+    jcenter()
+  }
+  dependencies {
+    classpath "io.ratpack:ratpack-gradle:1.2.0"
+  }
+}
+
+apply plugin: "io.ratpack.ratpack-groovy"
 
 dependencies{
-    compile "org.slf4j:slf4j-api:1.7.5"
+    runtime 'org.slf4j:slf4j-simple:1.7.12'
     compile "org.scala-lang:scala-library:2.12.1"
     testCompile group: 'org.scalatest', name: 'scalatest_2.11', version: '2.2.2'
-}
-
-
-task run(type: JavaExec, dependsOn: classes) {
-    main = 'Main'
-    classpath sourceSets.main.runtimeClasspath
-    classpath configurations.runtime
+    testCompile "org.spockframework:spock-core:1.0-groovy-2.4"
 }
 
 task wrapper(type: Wrapper) {

@@ -1,5 +1,8 @@
 apply plugin: 'scala'
+apply plugin: 'application'
 apply plugin: 'groovy'
+
+mainClassName='app.IndicationApplication'
 
 repositories{
     mavenCentral()
@@ -11,20 +14,20 @@ buildscript {
   repositories {
     jcenter()
   }
-  dependencies {
-    classpath "io.ratpack:ratpack-gradle:1.2.0"
-  }
 }
-
-apply plugin: "io.ratpack.ratpack-groovy"
 
 dependencies{
     runtime 'org.slf4j:slf4j-simple:1.7.12'
     compile "org.scala-lang:scala-library:2.12.1"
-    compile "org.grails:grails-datastore-gorm-neo4j:6.0.9.RELEASE"
-    compile 'org.grails:grails-validation:3.1.14'
+    compile 'org.neo4j:neo4j-ogm-core:3.1.0'
+    compile "com.squareup.retrofit2:retrofit:${retrofitVersion}"
+    compile "com.squareup.retrofit2:converter-jackson:${retrofitVersion}"
+    runtime 'org.neo4j:neo4j-ogm-bolt-driver:3.1.0'
     testCompile group: 'org.scalatest', name: 'scalatest_2.11', version: '2.2.2'
     testCompile "org.spockframework:spock-core:1.0-groovy-2.4"
+    testCompile 'org.neo4j:neo4j-ogm-test:3.1.0'
+    compile 'org.codehaus.groovy:groovy-all:2.4.10'
+    testCompile 'org.spockframework:spock-core:1.0-groovy-2.4'
 }
 
 task wrapper(type: Wrapper) {

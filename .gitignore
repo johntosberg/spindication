@@ -2,8 +2,13 @@
 *.class
 
 # Gradle files
-.gradle/
-build/
+.gradle
+/build/
+**/out/
+**/build/
 
 # Idea files
-.idea.
+.idea/
+*.iws
+*.iml
+*.ipr

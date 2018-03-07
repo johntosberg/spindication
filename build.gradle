@@ -24,14 +24,12 @@ run {
 
 dependencies{
     runtime 'org.slf4j:slf4j-simple:1.7.12'
-    compile "org.scala-lang:scala-library:2.12.1"
     compile 'io.reactivex:rxgroovy:1.0.3'
     compile 'org.neo4j:neo4j-ogm-core:3.1.0'
     compile "com.squareup.retrofit2:retrofit:${retrofitVersion}"
     compile "com.squareup.retrofit2:converter-jackson:${retrofitVersion}"
     compile "com.squareup.retrofit2:adapter-rxjava2:${retrofitVersion}"
     runtime 'org.neo4j:neo4j-ogm-bolt-driver:3.1.0'
-    testCompile group: 'org.scalatest', name: 'scalatest_2.11', version: '2.2.2'
     testCompile "org.spockframework:spock-core:1.0-groovy-2.4"
     testCompile 'org.neo4j:neo4j-ogm-test:3.1.0'
     compile 'org.codehaus.groovy:groovy-all:2.4.10'

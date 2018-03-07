@@ -12,7 +12,7 @@ To start the application:
 
 `docker-compose up -d`
 
-`./gradlew run`
+`./gradlew run -Dspotify.token=${yourGeneratedSpotifyToken}`
 
 ## about me / contributing
 I am relatively new to open source and application development. As such, I am open to contributions in both code and design. I'll be pretty bummed if you rip-off my idea and start a company with it, but my intention here is to make something I want to use, and learn along the way. 

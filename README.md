@@ -1,7 +1,7 @@
 [![CircleCI](https://circleci.com/gh/johntosberg/indication/tree/master.svg?style=svg)](https://circleci.com/gh/johntosberg/indication/tree/master)
 
-# indication
-Indication (name open to change) is an application made by DJs for DJs. It is intended to help DJ's answer the question that comes up in every set "What was that one song I played after this one that people went crazy for?"
+# spindication
+Spinndication is an application made by DJs for DJs. It is intended to help DJ's answer the question that comes up in every set "What was that one song I played after this one that people went crazy for?"
 
 In the first iteration it will take in a DJ's Serato setlists, store them in a directed graph database, and query that database to find the next track (node).
 

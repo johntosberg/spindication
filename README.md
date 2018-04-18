@@ -1,4 +1,4 @@
-[![CircleCI](https://circleci.com/gh/johntosberg/indication/tree/master.svg?style=svg)](https://circleci.com/gh/johntosberg/indication/tree/master)
+[![CircleCI](https://circleci.com/gh/johntosberg/spindication.svg?style=svg)](https://circleci.com/gh/johntosberg/spindication)
 
 # spindication
 Spinndication is an application made by DJs for DJs. It is intended to help DJ's answer the question that comes up in every set "What was that one song I played after this one that people went crazy for?"

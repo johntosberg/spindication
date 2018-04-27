@@ -12,3 +12,6 @@
 *.iws
 *.iml
 *.ipr
+
+# The grossness that always comes along
+*.DS_STORE

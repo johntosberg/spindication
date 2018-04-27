@@ -1,6 +1,6 @@
-package service
+package service.importing
 
-class TracklistImporter {
+class CsvTrackListImporter {
 
     static List<String> getTracksFromInputStream(InputStream stream) {
         if (!stream) { return [] }

@@ -21,11 +21,11 @@ class TrackSpec extends Specification {
                 ),
                 popularity: 92,
                 bpm: 110,
-                nextSongPlayed: [getLow]
+                nextSongsPlayed: [getLow]
         )
 
         expect:
-        yeah.nextSongPlayed.contains(getLow)
+        yeah.nextSongsPlayed.contains(getLow)
     }
 
 }

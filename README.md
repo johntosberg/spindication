@@ -11,7 +11,7 @@ indication is a simple groovy application. The only runtime requirement is [dock
 As of 4/26/18 the "application" doesn't really do anything. Write and run tests to get function from the services
 
 ## about me / contributing
+### [trello](https://trello.com/b/6Ut0l0Ag)
 I am relatively new to open source and application development. As such, I am open to contributions in both code and design. I'll be pretty bummed if you rip-off my idea and start a company with it, but my intention here is to make something I want to use, and learn along the way.
 
-### [trello](https://trello.com/b/6Ut0l0Ag)
 ### [name credit](https://github.com/TheoKanning)

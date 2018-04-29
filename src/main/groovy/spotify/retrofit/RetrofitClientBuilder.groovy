@@ -17,7 +17,7 @@ class RetrofitClientBuilder {
         return new Retrofit.Builder()
             .baseUrl(url)
             .client(clientBuilder.build())
-                .addConverterFactory(JacksonConverterFactory.create(new ObjectMapper().configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false))) //TODO: add objectmapper class
+                .addConverterFactory(JacksonConverterFactory.create(new ObjectMapper().configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false)))
                 .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                 .build()
     }

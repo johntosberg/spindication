@@ -13,7 +13,7 @@ class SpindicationIntegrationSpec extends Specification {
     SetlistImporterService setlistService
 
     void setup() {
-        SpotifyApi spotifyApi = ApiProvider.getApi("")
+        SpotifyApi spotifyApi = new ApiProvider().getApi()
         setlistService = new SetlistImporterService(spotifyApi)
     }
 

@@ -1,8 +1,7 @@
-package service.importing
+package spin.importing
 
-import domain.Track
+import spin.domain.Track
 import io.reactivex.Observable
-import service.importing.SetlistImporterService
 import spock.lang.Specification
 import spotify.api.SpotifyApi
 import spotify.domain.SpotifySearchResponse
@@ -20,7 +19,7 @@ class SetlistImporterServiceSpec extends Specification {
 //        0 * _
     }
 
-    void 'Gets the first track and correctly maps it to a domain track'() {
+    void 'Gets the first track and correctly maps it to a spin.domain track'() {
         given:
         String trackString = 'My original song'
         String expectedId = UUID.randomUUID().toString()

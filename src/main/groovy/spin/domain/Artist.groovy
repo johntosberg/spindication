@@ -1,4 +1,4 @@
-package domain
+package spin.domain
 
 import spotify.domain.SpotifyArtist
 

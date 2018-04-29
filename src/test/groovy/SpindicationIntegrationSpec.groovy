@@ -1,7 +1,7 @@
-import domain.Track
+import spin.domain.Track
 import org.junit.Ignore
-import service.importing.CsvTrackListImporter
-import service.importing.SetlistImporterService
+import spin.importing.CsvTrackListImporter
+import spin.importing.SetlistImporterService
 import spock.lang.Specification
 import spotify.ApiProvider
 import spotify.api.SpotifyApi

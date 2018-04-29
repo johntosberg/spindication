@@ -1,4 +1,4 @@
-package domain
+package spin.domain
 
 import spock.lang.Specification
 

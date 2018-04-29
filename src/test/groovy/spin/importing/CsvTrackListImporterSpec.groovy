@@ -1,6 +1,5 @@
-package service.importing
+package spin.importing
 
-import service.importing.CsvTrackListImporter
 import spock.lang.Specification
 
 class CsvTrackListImporterSpec extends Specification {

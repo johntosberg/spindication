@@ -1,6 +1,6 @@
-package service.importing
+package spin.importing
 
-import domain.Track
+import spin.domain.Track
 import groovy.util.logging.Slf4j
 import spotify.api.SpotifyApi
 import spotify.domain.SpotifySearchResponse

@@ -19,7 +19,7 @@ class Track {
     String rawName
 
     @Property(name = 'artist')
-    Artist artist
+    String artist
 
     @Property(name = 'popularity')
     Integer popularity

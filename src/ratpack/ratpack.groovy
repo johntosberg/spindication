@@ -2,6 +2,8 @@ import com.google.common.io.Resources
 import spin.config.SpinConfig
 import ratpack.groovy.template.MarkupTemplateModule
 import spin.endpoint.SearchEndpoint
+import spin.endpoint.TrackEndpoint
+import spin.module.RepositoryModule
 import spin.module.SpinModule
 import spin.module.SpotifyApiModule
 
@@ -20,6 +22,7 @@ ratpack {
         module MarkupTemplateModule
         module SpinModule
         module SpotifyApiModule
+        module RepositoryModule
     }
 
     handlers {
@@ -28,6 +31,9 @@ ratpack {
         }
         prefix('spotify') {
             insert(SearchEndpoint)
+        }
+        prefix('tracks') {
+            insert(TrackEndpoint)
         }
 
     }

@@ -6,9 +6,10 @@ Spinndication is an application made by DJs for DJs. It is intended to help DJ's
 In the first iteration it will take in a DJ's Serato setlists, store them in a directed graph database, and query that database to find the next track (node).
 
 ## running
-indication is a simple groovy application. The only runtime requirement is [docker.](https://www.docker.com/)
+indication is a simple groovy application. The only runtime requirement is [docker.](https://www.docker.com/) and a spotify developer account. To run:
 
-As of 4/26/18 the "application" doesn't really do anything. Write and run tests to get function from the services
+`./gradlew run -Dclient.id=<YOUR_SPOTIFY_CLIENT_ID> -Dclient.secret=<YOUR_SPOTIFY_CLIENT_SECRET>`
+
 
 ## about me / contributing
 ### [trello](https://trello.com/b/6Ut0l0Ag)

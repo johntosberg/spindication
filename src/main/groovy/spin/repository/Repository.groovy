@@ -2,9 +2,12 @@ package spin.repository
 
 interface Repository<T> {
 
-    T find(String id)
+    List<T> findAll()
+
+    T find(String id, Integer depth)
 
     T createOrUpdate(T object)
 
     void delete(String id)
+
 }

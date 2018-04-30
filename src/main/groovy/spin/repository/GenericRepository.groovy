@@ -4,6 +4,7 @@ import org.neo4j.ogm.session.Session
 
 abstract class GenericRepository<T> implements Repository<T> {
 
+    private static final int DEPTH_LIST = 0
     private static final int DEPTH_ENTITY = 1
     protected Session session
 
@@ -12,8 +13,14 @@ abstract class GenericRepository<T> implements Repository<T> {
     }
 
     @Override
-    T find(String id) {
-        return session.load(getEntityType(), id, DEPTH_ENTITY)
+    List<T> findAll() {
+        return session.loadAll(getEntityType(), DEPTH_LIST)
+    }
+
+    @Override
+    T find(String id, Integer depth) {
+        session.clear() //TODO: read more about caching. I want depth to reloaded each time
+        return session.load(getEntityType(), id, depth)
     }
 
     @Override
@@ -24,7 +31,7 @@ abstract class GenericRepository<T> implements Repository<T> {
     @Override
     T createOrUpdate(T entity) {
         session.save(entity, DEPTH_ENTITY)
-        return find(entity.id)
+        return find(entity.id, 1)
     }
 
     abstract Class<T> getEntityType()

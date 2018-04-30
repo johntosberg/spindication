@@ -1,3 +1,5 @@
+server:
+  port: 52124
 spin:
   clientId: 'client id placeholder'
   clientSecret: 'client secret placeholder'

@@ -1,4 +1,5 @@
 import com.google.common.io.Resources
+import ratpack.handling.RequestLogger
 import spin.config.SpinConfig
 import ratpack.groovy.template.MarkupTemplateModule
 import spin.endpoint.SearchEndpoint
@@ -26,6 +27,8 @@ ratpack {
     }
 
     handlers {
+        all(RequestLogger.ncsa())
+
         get {
             render file("public/index.html")
         }

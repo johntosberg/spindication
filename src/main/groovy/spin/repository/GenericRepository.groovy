@@ -1,6 +1,9 @@
 package spin.repository
 
 import org.neo4j.ogm.session.Session
+import ratpack.exec.Blocking
+import ratpack.exec.Operation
+import ratpack.exec.Promise
 
 abstract class GenericRepository<T> implements Repository<T> {
 
@@ -13,25 +16,33 @@ abstract class GenericRepository<T> implements Repository<T> {
     }
 
     @Override
-    List<T> findAll() {
-        return session.loadAll(getEntityType(), DEPTH_LIST)
+    Promise<List<T>> findAll() {
+        Blocking.get{
+            session.loadAll(getEntityType(), DEPTH_LIST).toList()
+        }
     }
 
     @Override
-    T find(String id, Integer depth) {
-        session.clear() //TODO: read more about caching. I want depth to reloaded each time
-        return session.load(getEntityType(), id, depth)
+    Promise<T> find(String id, Integer depth = 1) {
+        Blocking.get {
+            session.clear() //TODO: read more about caching. I want depth to reloaded each time
+            session.load(getEntityType(), id, depth)
+        }
     }
 
     @Override
-    void delete(String id) {
-        session.delete(session.load(getEntityType(), id))
+    Operation delete(String id) {
+        Blocking.op {
+            session.delete(session.load(getEntityType(), id))
+        }
     }
 
     @Override
-    T createOrUpdate(T entity) {
-        session.save(entity, DEPTH_ENTITY)
-        return find(entity.id, 1)
+    Promise<T> createOrUpdate(T entity) {
+        Blocking.get {
+            session.save(entity, DEPTH_ENTITY)
+            entity
+        }
     }
 
     abstract Class<T> getEntityType()

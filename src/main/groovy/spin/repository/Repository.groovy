@@ -1,13 +1,16 @@
 package spin.repository
 
+import ratpack.exec.Operation
+import ratpack.exec.Promise
+
 interface Repository<T> {
 
-    List<T> findAll()
+    Promise<List<T>> findAll()
 
-    T find(String id, Integer depth)
+    Promise<T> find(String id, Integer depth)
 
-    T createOrUpdate(T object)
+    Promise<T> createOrUpdate(T object)
 
-    void delete(String id)
+    Operation delete(String id)
 
 }

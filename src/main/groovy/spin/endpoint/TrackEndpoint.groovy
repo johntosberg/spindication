@@ -18,13 +18,16 @@ class TrackEndpoint extends GroovyChainAction {
     }
 
     @Override
-    void execute() throws Exception {
+    void execute() throws Exception { //TODO: put these in handlers
         path("track") {
             byMethod {
                 post {
                     parse(Track).then {
                         Track track ->
-                            render json(repository.createOrUpdate(track))
+                            repository.createOrUpdate(track)
+                            .then {
+                                render json(track)
+                            }
                     }
                 }
             }
@@ -40,7 +43,9 @@ class TrackEndpoint extends GroovyChainAction {
                     if (trackPlayed && nextPlayed) {
                         trackPlayed.nextSongsPlayed.add(nextPlayed)
                     }
-                    render json(repository.createOrUpdate(trackPlayed))
+                    repository.createOrUpdate(trackPlayed).then {
+                        render json(trackPlayed)
+                    }
                 }
             }
         }

@@ -12,16 +12,15 @@ class Neo4jSessionFactory {
             new ClasspathConfigurationSource("ogm.properties")
     private static Configuration configuration = new Configuration.Builder(configurationSource).build()
     private static SessionFactory sessionFactory = new SessionFactory(configuration, "spin.domain")
-    private static Neo4jSessionFactory factory = new Neo4jSessionFactory()
 
     static Neo4jSessionFactory getInstance() {
-        return factory
+        return new Neo4jSessionFactory()
     }
 
     private Neo4jSessionFactory() {
     }
 
-    Session getNeo4jSession() {
+    static Session getNeo4jSession() {
         return sessionFactory.openSession()
     }
 }

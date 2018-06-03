@@ -1,7 +1,7 @@
 import spin.domain.Track
 import org.junit.Ignore
-import spin.importing.CsvTrackListImporter
-import spin.importing.SetlistImporterService
+import spin.service.CsvTrackListImporter
+import spin.service.SetlistImporterService
 import spock.lang.Specification
 import spotify.ApiProvider
 import spotify.api.SpotifyApi
@@ -24,7 +24,7 @@ class SpindicationIntegrationSpec extends Specification {
 
         Track previousTrack
         boolean firstTrack = true
-        //demo - this is what the app will eventually do with a healthy amount of UI for importing tracklists
+        //demo - this is what the app will eventually do with a healthy amount of UI for service tracklists
         rawTrackList.each { String trackTitle ->
             Track discoveredTrack = setlistService.getTrackFromString(trackTitle)
             if (discoveredTrack) {

@@ -1,4 +1,4 @@
-package spin.importing
+package spin.service
 
 import spock.lang.Specification
 

@@ -42,4 +42,35 @@ class Track {
                 bpm: 0, // TODO
         )
     }
+
+    @Override
+    boolean equals(o) {
+        if (this.is(o)) return true
+        if (getClass() != o.class) return false
+
+        Track track = (Track) o
+
+        if (artist != track.artist) return false
+        if (bpm != track.bpm) return false
+        if (id != track.id) return false
+        if (name != track.name) return false
+        if (playCount != track.playCount) return false
+        if (popularity != track.popularity) return false
+        if (rawName != track.rawName) return false
+
+        return true
+    }
+
+    @Override
+    int hashCode() {
+        int result
+        result = id.hashCode()
+        result = 31 * result + (name != null ? name.hashCode() : 0)
+        result = 31 * result + (rawName != null ? rawName.hashCode() : 0)
+        result = 31 * result + (artist != null ? artist.hashCode() : 0)
+        result = 31 * result + (popularity != null ? popularity.hashCode() : 0)
+        result = 31 * result + (bpm != null ? bpm.hashCode() : 0)
+        result = 31 * result + (playCount != null ? playCount.hashCode() : 0)
+        return result
+    }
 }

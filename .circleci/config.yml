@@ -48,10 +48,10 @@ jobs:
             mkdir -p ~/spock/js/
             mkdir -p ~/spock/packages/
             find . -type f -regex ".*/build/reports/tests/test/index.html" -exec cp {} ~/spock/ \;
-            find . -type f -regex ".*/build/reports/tests/test/classes/*.html" -exec cp {} ~/spock/classes/ \;
-            find . -type f -regex ".*/build/reports/tests/test/css/*.css" -exec cp {} ~/spock/css/ \;
-            find . -type f -regex ".*/build/reports/tests/test/js/*.js" -exec cp {} ~/spock/js/ \;
-            find . -type f -regex ".*/build/reports/tests/test/packages/*.html" -exec cp {} ~/spock/packages/ \;
+            find . -type f -regex ".*/build/reports/tests/test/classes/.*html" -exec cp {} ~/spock/classes/ \;
+            find . -type f -regex ".*/build/reports/tests/test/css/.*css" -exec cp {} ~/spock/css/ \;
+            find . -type f -regex ".*/build/reports/tests/test/js/.*js" -exec cp {} ~/spock/js/ \;
+            find . -type f -regex ".*/build/reports/tests/test/packages/.*html" -exec cp {} ~/spock/packages/ \;
           when: always
       - store_test_results:
           path: ~/spock

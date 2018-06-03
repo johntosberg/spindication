@@ -43,7 +43,7 @@ jobs:
           name: Save test results
           command: |
             mkdir -p ~/spock/
-            find . -type f -regex ".*/build/reports/tests/test/index.html" -exec cp {} ~/junit/ \;
+            find . -type f -regex ".*/build/reports/tests/test/index.html" -exec cp {} ~/spock/ \;
           when: always
       - store_test_results:
           path: ~/spock

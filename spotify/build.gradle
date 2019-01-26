@@ -1,0 +1,16 @@
+repositories{
+    mavenCentral()
+    mavenLocal()
+    jcenter()
+}
+
+
+dependencies{
+    compile 'io.reactivex:rxgroovy:1.0.3'
+    compile project(':libs')
+    compile "com.squareup.retrofit2:retrofit:${retrofitVersion}"
+    compile "com.squareup.retrofit2:converter-jackson:${retrofitVersion}"
+    compile "com.squareup.retrofit2:adapter-rxjava2:${retrofitVersion}"
+    compile 'org.apache.httpcomponents:httpclient:4.5'
+
+}

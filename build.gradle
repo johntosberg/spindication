@@ -1,6 +1,5 @@
 apply plugin: 'groovy'
-apply plugin: "io.ratpack.ratpack-groovy"
-apply plugin: "com.github.johnrengelman.shadow"
+apply plugin: 'idea'
 
 repositories{
     mavenCentral()
@@ -13,38 +12,17 @@ buildscript {
     jcenter()
   }
   dependencies {
-      classpath "io.ratpack:ratpack-gradle:1.4.4"
       classpath "com.github.jengelman.gradle.plugins:shadow:1.2.4"
   }
 }
 
-String id = System.getProperty('client.id')
-String secret = System.getProperty('client.secret')
-
-run {
-    environment('RATPACK_SPIN__CLIENT_ID', id)
-    environment('RATPACK_SPIN__CLIENT_SECRET', secret)
-
-    systemProperty('client.id', id)
-    systemProperty('client.secret', secret)
+allprojects {
+    apply plugin: 'groovy'
+    apply plugin: 'idea'
+    dependencies {
+        runtime 'org.slf4j:slf4j-simple:1.7.12'
+        compile 'org.codehaus.groovy:groovy-all:2.4.10'
+        testCompile "org.spockframework:spock-core:1.0-groovy-2.4"
+    }
 }
 
-dependencies{
-    runtime 'org.slf4j:slf4j-simple:1.7.12'
-    compile 'io.reactivex:rxgroovy:1.0.3'
-    compile 'org.neo4j:neo4j-ogm-core:3.1.0'
-    compile "org.grails:grails-datastore-gorm-neo4j:6.0.9.RELEASE"
-    compile "com.squareup.retrofit2:retrofit:${retrofitVersion}"
-    compile "com.squareup.retrofit2:converter-jackson:${retrofitVersion}"
-    compile "com.squareup.retrofit2:adapter-rxjava2:${retrofitVersion}"
-    compile 'org.apache.httpcomponents:httpclient:4.5'
-    runtime 'org.neo4j:neo4j-ogm-bolt-driver:3.1.0'
-    testCompile "org.spockframework:spock-core:1.0-groovy-2.4"
-    testCompile 'org.neo4j:neo4j-ogm-test:3.1.0'
-    compile 'org.codehaus.groovy:groovy-all:2.4.10'
-    testCompile 'org.spockframework:spock-core:1.0-groovy-2.4'
-}
-
-task wrapper(type: Wrapper) {
-    gradleVersion = '4.4.1'
-}

@@ -3,15 +3,15 @@
 # spindication
 Spinndication is an application made by DJs for DJs. It is intended to help DJ's answer the question that comes up in every set "What was that one song I played after this one that people went crazy for?"
 
-In the first iteration it will take in a DJ's Serato setlists, store them in a directed graph database, and query that database to find the next track (node).
+## design
+The design idea is to create a simple recommender system by storing order tracks from a setlist as nodes in a graph database. Once this database is well formated and accurate, finding the "next" song should be as easy as querying for edges of the playing song.
 
-## running
-indication is a simple groovy application. The only runtime requirement is [docker.](https://www.docker.com/)
-
-As of 4/26/18 the "application" doesn't really do anything. Write and run tests to get function from the services
+## status
+Currently development of this project is on hold likely until I DJ enough times in the summer of 19' to want to hack together an MVP. 
 
 ## about me / contributing
-### [trello](https://trello.com/b/6Ut0l0Ag)
-I am relatively new to open source and application development. As such, I am open to contributions in both code and design. I'll be pretty bummed if you rip-off my idea and start a company with it, but my intention here is to make something I want to use, and learn along the way.
+You can check out some [bullet points](https://johnosberg.gitlab.io/) about me, which will also lead to all of my social accounts, feel free to internet creep. 
+
+Since this project has stalled out, if you somehow stumble on this code feel free to reach out about contributing, or just fork it and run with it. If you make something cool from the idea I'd love it if you reach out, I'll probably want to use it!
 
 ### [name credit](https://github.com/TheoKanning)
